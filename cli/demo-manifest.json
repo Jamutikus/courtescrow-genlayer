@@ -1,0 +1,48 @@
+{
+  "contract": "0x9Aa42eEB1eE57373A905747dF125885ECa57E6De",
+  "chain_id": 61997,
+  "started_at_utc": "2026-11-21T00:51:46.938Z",
+  "deals": {
+    "ce-20261121-05": {
+      "terms": "The deliverable must be the Internet Court Skill README: it must describe agent-to-agent contracts, adjudication, and dispute resolution for agentic commerce.",
+      "deliverable_url": "https://raw.githubusercontent.com/internet-court/internet-court-skill/main/README.md",
+      "deliverable_hash": "0x2af048b34781f62651f559e79f07d358d874b534a2c3fd807516f2e42d1f4bc3",
+      "seller": "0x1c9A1a137805826084615cC47c32cD07e885dc85",
+      "amount": 2,
+      "expected": "DELIVERED",
+      "create_tx": "0xe6beae1571ab68c25ce9431a884fc0e07eaba69c6639212533dd1dd8f33ebd9a",
+      "dispute_tx": "0x4ea2d4be07dccc696577cf6c2089173d0b2b0c6d5a6f4c3d17c51e30f874565d",
+      "adjudicate_tx": "0xae3837f117d2101de099e40980d4a02544a3b1337ae725788156c94607a13f88",
+      "verdict": {
+        "confidence": 100,
+        "deal_id": "ce-20261121-05",
+        "reasoning": "Delivered content satisfies the deal terms (unanimous validator consensus).",
+        "settled_to": "0x1c9A1a137805826084615cC47c32cD07e885dc85",
+        "verdict": "DELIVERED"
+      }
+    },
+    "ce-20261121-06": {
+      "terms": "The deliverable must be the Internet Court Skill README: it must describe agent-to-agent contracts, adjudication, and dispute resolution for agentic commerce.",
+      "deliverable_url": "https://raw.githubusercontent.com/genlayerlabs/genlayer-project-boilerplate/main/README.md",
+      "deliverable_hash": "0x5fe91125f339e1a8079955a1621cdf10879a9997f69d41d889d13fff94a18a92",
+      "seller": "0x1c9A1a137805826084615cC47c32cD07e885dc85",
+      "amount": 2,
+      "expected": "NOT_DELIVERED",
+      "create_tx": "0xc6d80846ef7b6e58b4128f19d2f9409a8263d4dda5aafa065b485b3099af9710",
+      "dispute_tx": "0x8f6b9ea791d17eee62089b2f12922501d351a52749d105f7327b6525f066df42",
+      "adjudicate_tx": "0xb2156f9046c6c506c6c44a9aa586a25fb2588c0551a4d1b60e0781033700c473",
+      "verdict": {
+        "confidence": 100,
+        "deal_id": "ce-20261121-06",
+        "reasoning": "Delivered content does not satisfy the deal terms (unanimous validator consensus).",
+        "settled_to": "0xDA7D88c9Fb1b2A36cee9A1f19e6EF00Bf181F59e",
+        "verdict": "NOT_DELIVERED"
+      }
+    }
+  },
+  "ledger": {
+    "payable:0x1c9A1a137805826084615cC47c32cD07e885dc85": 2,
+    "refundable:0xDA7D88c9Fb1b2A36cee9A1f19e6EF00Bf181F59e": 2
+  },
+  "finished_at_utc": "2026-11-21T00:53:37.173Z"
+}
