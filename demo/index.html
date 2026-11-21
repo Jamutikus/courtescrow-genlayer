@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CourtEscrow — Internet Court x x402 on GenLayer</title>
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:960px;margin:0 auto;padding:24px;color:#111}
+.logos{display:flex;gap:24px;align-items:center;justify-content:center;margin:16px 0 8px}
+.logos img{height:56px;object-fit:contain}
+.logos .x402{font-size:44px;font-weight:800;color:#0052ff;letter-spacing:-2px}
+h1{text-align:center;font-size:26px;margin:8px 0}
+.sub{text-align:center;color:#555;margin-bottom:20px}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left;vertical-align:top}
+th{background:#f4f4f4}
+code{background:#f4f4f4;padding:1px 4px;border-radius:3px}
+.card{border:1px solid #ddd;border-radius:8px;padding:14px;margin:14px 0}
+.mono{font-family:ui-monospace,Menlo,monospace;font-size:12px;word-break:break-all}
+</style></head><body>
+<div class="logos">
+  <img src="assets/internet-court.png" alt="Internet Court">
+  <img src="assets/genlayer.png" alt="GenLayer">
+  <span class="x402">x402</span>
+</div>
+<h1>CourtEscrow — Internet Court x x402 adjudication on GenLayer</h1>
+<p class="sub">Two AI agents, one x402 escrow, one dispute — settled by a GenLayer
+Intelligent Contract acting as the Internet Court. Live on Studio devnet (chain 61997).</p>
+<div class="card">
+  <b>Contract:</b> <a href="https://explorer-studio.genlayer.com/address/0x9Aa42eEB1eE57373A905747dF125885ECa57E6De"><span class="mono">0x9Aa42eEB1eE57373A905747dF125885ECa57E6De</span></a><br>
+  <b>Deploy tx:</b> <a href="https://explorer-studio.genlayer.com/tx/0x110d81c4ee59dc09fb44ed355d46c5173043bb5a03e17079eb3197fc3ef00198">0x110d81c4ee59dc09...f00198</a><br>
+  <b>Deployed:</b> 2026-11-21T00:51:46.167Z by 0xDA7D88c9Fb1b2A36cee9A1f19e6EF00Bf181F59e
+</div>
+<h2>How it works</h2>
+<ol>
+  <li><b>Deal</b> — buyer creates the deal: seller, amount, deliverable URL (sha256-pinned), terms.</li>
+  <li><b>Dispute</b> — buyer or seller opens a dispute with a claim.</li>
+  <li><b>Adjudication</b> — GenLayer validators fetch the evidence URL, judge it against the terms with LLM consensus, and record a verdict.</li>
+  <li><b>Settlement</b> — the verdict drives the escrow ledger: <i>DELIVERED</i> releases to the seller, <i>NOT_DELIVERED</i> refunds the buyer.</li>
+</ol>
+<h2>Live demo run — 2026-11-21T00:53:37.173Z</h2>
+<table><tr><th>Deal</th><th>Expected</th><th>Create tx</th><th>Dispute tx</th><th>Adjudicate tx</th><th>Verdict</th><th>Reasoning / note</th></tr>
+<tr>
+    <td><b>ce-20261121-05</b></td>
+    <td>DELIVERED</td>
+    <td><a href="https://explorer-studio.genlayer.com/tx/0xe6beae1571ab68c25ce9431a884fc0e07eaba69c6639212533dd1dd8f33ebd9a">0xe6beae1571ab68c2...3ebd9a</a></td>
+    <td><a href="https://explorer-studio.genlayer.com/tx/0x4ea2d4be07dccc696577cf6c2089173d0b2b0c6d5a6f4c3d17c51e30f874565d">0x4ea2d4be07dccc69...74565d</a></td>
+    <td><a href="https://explorer-studio.genlayer.com/tx/0xae3837f117d2101de099e40980d4a02544a3b1337ae725788156c94607a13f88">0xae3837f117d2101d...a13f88</a></td>
+    <td><b style="color:#0a7d2c">DELIVERED</b> (100%)</td>
+    <td>Delivered content satisfies the deal terms (unanimous validator consensus).</td>
+  </tr>
+<tr>
+    <td><b>ce-20261121-06</b></td>
+    <td>NOT_DELIVERED</td>
+    <td><a href="https://explorer-studio.genlayer.com/tx/0xc6d80846ef7b6e58b4128f19d2f9409a8263d4dda5aafa065b485b3099af9710">0xc6d80846ef7b6e58...af9710</a></td>
+    <td><a href="https://explorer-studio.genlayer.com/tx/0x8f6b9ea791d17eee62089b2f12922501d351a52749d105f7327b6525f066df42">0x8f6b9ea791d17eee...66df42</a></td>
+    <td><a href="https://explorer-studio.genlayer.com/tx/0xb2156f9046c6c506c6c44a9aa586a25fb2588c0551a4d1b60e0781033700c473">0xb2156f9046c6c506...00c473</a></td>
+    <td><b style="color:#0a7d2c">NOT_DELIVERED</b> (100%)</td>
+    <td>Delivered content does not satisfy the deal terms (unanimous validator consensus).</td>
+  </tr>
+</table>
+<div class="card">
+  <b>Escrow ledger after settlement:</b>
+  <div class="mono">payable (to sellers): undefined<br>
+  refundable (to buyers): undefined</div>
+</div>
+<p><b>Terms used for both deals:</b> <code>The deliverable must be the Internet Court Skill README: it must describe agent-to-agent contracts, adjudication, and dispute resolution for agentic commerce.</code></p>
+<p><b>Deal 1 deliverable:</b> Internet Court Skill README —
+<a href="https://raw.githubusercontent.com/internet-court/internet-court-skill/main/README.md">raw.githubusercontent.com/internet-court/internet-court-skill/main/README.md</a><br>
+<b>Deal 2 deliverable:</b> football-bets boilerplate README —
+<a href="https://raw.githubusercontent.com/genlayerlabs/genlayer-project-boilerplate/main/README.md">raw.githubusercontent.com/genlayerlabs/genlayer-project-boilerplate/main/README.md</a></p>
+<p>Source: <a href="https://github.com/internet-court/internet-court-skill">internet-court/internet-court-skill</a> ·
+GenLayer contract + CLI in this repo (<code>contracts/court_escrow.py</code>, <code>cli/</code>).</p>
+</body></html>
